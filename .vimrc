@@ -7,6 +7,7 @@ set shiftwidth=2
 set laststatus=2
 set nu "行数表示
 set hlsearch "検索結果のハイライト
+nnoremap <silent> <C-L> :noh<C-L><CR>
 " underline(color terminal)
 set cursorline
 highlight CursorLine cterm=underline ctermfg=NONE ctermbg=NONE 
@@ -25,7 +26,6 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 "==============plugins=====================
 "NERDTree                 
 NeoBundle 'scrooloose/nerdtree' 
-call neobundle#end()
 "vim-cpp-enhanced-highlight
 NeoBundle 'octol/vim-cpp-enhanced-highlight'
 let g:cpp_class_scope_highlight = 1
@@ -33,6 +33,8 @@ let g:cpp_class_scope_highlight = 1
 NeoBundle 'thinca/vim-quickrun'
 let g:quickrun_config={'*': {'split': ''}} "実行結果を出す時、上下に分割
 set splitbelow "実行結果を下側に出す
+
+call neobundle#end()
 "==========================================
 " Required:
 filetype plugin indent on
