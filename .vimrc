@@ -8,10 +8,13 @@ set shiftwidth=2
 set laststatus=2
 set nu "行数表示
 set hlsearch "検索結果のハイライト
-nnoremap <silent> <C-L> :noh<C-L><CR>
+"nnoremap <silent> <C-L> :noh<C-L><CR>
+" ESC 2回でハイライト消し
+nmap <Esc><Esc> :nohl<CR>
 " underline(color terminal)
 set cursorline
 highlight CursorLine cterm=underline ctermfg=NONE ctermbg=NONE 
+
 "---------------------------
 " Start Neobundle Settings.
 "---------------------------
@@ -46,11 +49,11 @@ NeoBundle 'Shougo/vimproc', {
       \     'unix' : 'make -f make_unix.mak',
       \    },
       \ }
-" neocomplete
-NeoBundle 'Shougo/neocomplete.vim'
-" neosnippets
-NeoBundle 'Shougo/neosnippet.vim'
-NeoBundle 'Shougo/neosnippet-snippets'
+"" neocomplete
+"NeoBundle 'Shougo/neocomplete.vim'
+"" neosnippets
+"NeoBundle 'Shougo/neosnippet.vim'
+"NeoBundle 'Shougo/neosnippet-snippets'
 
 call neobundle#end()
 "==========================================
