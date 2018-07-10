@@ -31,6 +31,18 @@ setopt AUTO_PUSHD
 SAVEHIST=10000
 HISTSIZE=10000
 HISTFILE=~/.zhistory
+
 ### プロンプト ###
-PS1='%F{blue}%B%n%b%f%% '
+### vcs infomation
+autoload -Uz vcs_info
+zstyle ':vcs_info:*' formats '[%b]'
+zstyle ':vcs_info:*' actionformats '[%b|%a]'
+precmd () {
+    psvar=()
+    LANG=en_US.UTF-8 vcs_info
+    [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
+}
+GIT_STATUS='%1(v|%F{green}%1v%f|)'
+
+PS1='%F{blue}%B%n%b%f'${GIT_STATUS}'%% '
 RPS1='[%~]'

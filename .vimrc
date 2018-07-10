@@ -6,14 +6,22 @@ set smarttab
 set tabstop=2
 set shiftwidth=2
 set laststatus=2
+set splitright
+set splitbelow
 set nu "行数表示
-set hlsearch "検索結果のハイライト
-"nnoremap <silent> <C-L> :noh<C-L><CR>
-" ESC 2回でハイライト消し
-nmap <Esc><Esc> :nohl<CR>
+
+" 検索結果のハイライト
+set hlsearch
+" C-C でハイライト消し
+nnoremap <silent> <C-C> :nohl<CR>
+
 " underline(color terminal)
 set cursorline
 highlight CursorLine cterm=underline ctermfg=NONE ctermbg=NONE 
+
+" tab
+"" new
+nmap T :tabnew<CR>
 
 "---------------------------
 " Start Neobundle Settings.
