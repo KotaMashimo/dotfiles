@@ -1,7 +1,7 @@
 watch=(notme)
 alias ls='ls -FGC'
 export LESS='-R'
-export LESSOPEN='|lessfilter.sh %s'
+#export LESSOPEN='|lessfilter.sh %s'
 function poi(){mv $* ~/.Trash/;}
 #function rm(){mv $* ~/.Trash/;}
 alias grep='grep --color=auto'
